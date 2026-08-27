@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>THE ADRIAN</title>
+  <title>SHOP GAMING AD | فروشگاه گیمینگ</title>
 
   <style>
     * {
@@ -15,17 +15,20 @@
     }
 
     body {
-      background: #050505;
+      background: #070b14;
       color: white;
-      min-height: 100vh;
     }
 
     header {
-      padding: 20px 7%;
+      background: #0d1424;
+      border-bottom: 1px solid #1d3c6a;
+      padding: 18px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .logo {
@@ -37,51 +40,115 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 8px;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      color: #00aaff;
     }
 
     .hero {
-      min-height: 80vh;
+      min-height: 450px;
+      padding: 80px 7%;
+      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 30px;
+      background:
+        linear-gradient(rgba(7,11,20,.75), rgba(7,11,20,.95));
     }
 
     .hero h1 {
-      font-size: 52px;
+      font-size: 50px;
       color: #00aaff;
       margin-bottom: 15px;
     }
 
     .hero p {
-      color: #bbb;
+      color: #c4c4c4;
       font-size: 18px;
-      line-height: 2;
-    }
-
-    .buttons {
-      margin-top: 30px;
+      margin-bottom: 25px;
     }
 
     .btn {
-      display: inline-block;
       background: #00aaff;
-      color: #050505;
-      padding: 13px 22px;
-      margin: 5px;
-      border-radius: 8px;
+      color: #06101c;
+      border: none;
+      padding: 13px 25px;
+      border-radius: 10px;
+      font-weight: bold;
       text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 60px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #00aaff;
+    }
+
+    .categories,
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+
+    .category,
+    .product {
+      background: #0d1424;
+      border: 1px solid #1b2e4a;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .category {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .category:hover,
+    .product:hover {
+      transform: translateY(-5px);
+      border-color: #00aaff;
+    }
+
+    .product img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background: #08101c;
+    }
+
+    .product h3 {
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #00aaff;
+      margin-bottom: 15px;
       font-weight: bold;
     }
 
     footer {
+      background: #0d1424;
       text-align: center;
-      padding: 20px;
-      color: #777;
-      border-top: 1px solid #222;
+      padding: 25px;
+      margin-top: 40px;
+      color: #8995a7;
     }
 
     @media (max-width: 600px) {
@@ -91,7 +158,11 @@
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 35px;
+      }
+
+      nav {
+        font-size: 14px;
       }
     }
   </style>
@@ -99,34 +170,80 @@
 
 <body>
 
-  <header>
-    <div class="logo">THE ADRIAN</div>
+<header>
+  <div class="logo">🎮 SHOP GAMING AD</div>
 
-    <nav>
-      <a href="#">خانه</a>
-      <a href="#">درباره من</a>
-      <a href="#">ارتباط</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="#home">خانه</a>
+    <a href="#categories">دسته‌بندی</a>
+    <a href="#products">محصولات</a>
+    <a href="#contact">تماس</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <h1>THE ADRIAN</h1>
+<section class="hero" id="home">
+  <h1>SHOP GAMING AD</h1>
+  <p>دنیای تجهیزات گیمینگ 🎮🔥</p>
+  <a href="#products" class="btn">مشاهده محصولات</a>
+</section>
 
-    <p>
-      به دنیای من خوش اومدی 🎮🔥
-      <br>
-      معتبر، مطمئن، سریع
-    </p>
+<section class="section" id="categories">
+  <h2 class="section-title">دسته‌بندی‌ها</h2>
 
-    <div class="buttons">
-      <a class="btn" href="#">مشاهده لینک‌ها</a>
-      <a class="btn" href="#">تماس با من</a>
+  <div class="categories">
+    <div class="category">🖱️ موس گیمینگ</div>
+    <div class="category">⌨️ کیبورد گیمینگ</div>
+    <div class="category">🎧 هدست گیمینگ</div>
+    <div class="category">🕹️ دسته بازی</div>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <h2 class="section-title">🔥 محصولات ویژه</h2>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="https://placehold.co/300x200/111827/00aaff?text=Gaming+Mouse" alt="موس گیمینگ">
+      <h3>موس گیمینگ</h3>
+      <div class="price">۱,۵۰۰,۰۰۰ تومان</div>
+      <button class="btn">افزودن به سبد</button>
     </div>
-  </section>
 
-  <footer>
-    © 2026 THE ADRIAN
-  </footer>
+    <div class="product">
+      <img src="https://placehold.co/300x200/111827/00aaff?text=Gaming+Keyboard" alt="کیبورد گیمینگ">
+      <h3>کیبورد گیمینگ</h3>
+      <div class="price">۲,۸۰۰,۰۰۰ تومان</div>
+      <button class="btn">افزودن به سبد</button>
+    </div>
+
+    <div class="product">
+      <img src="https://placehold.co/300x200/111827/00aaff?text=Gaming+Headset" alt="هدست گیمینگ">
+      <h3>هدست گیمینگ</h3>
+      <div class="price">۲,۲۰۰,۰۰۰ تومان</div>
+      <button class="btn">افزودن به سبد</button>
+    </div>
+
+    <div class="product">
+      <img src="https://placehold.co/300x200/111827/00aaff?text=Game+Controller" alt="دسته بازی">
+      <h3>دسته بازی</h3>
+      <div class="price">۳,۰۰۰,۰۰۰ تومان</div>
+      <button class="btn">افزودن به سبد</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2 class="section-title">تماس با ما</h2>
+  <p style="text-align:center;color:#bbb;">
+    برای ارتباط و سفارش محصولات با ما در تماس باشید 🎮
+  </p>
+</section>
+
+<footer>
+  © 2026 SHOP GAMING AD — تمامی حقوق محفوظ است
+</footer>
 
 </body>
 </html>

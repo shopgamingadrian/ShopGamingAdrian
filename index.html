@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>THE ADRIAN</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #050505;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00aaff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      color: #00aaff;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #bbb;
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00aaff;
+      color: #050505;
+      padding: 13px 22px;
+      margin: 5px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">THE ADRIAN</div>
+
+    <nav>
+      <a href="#">خانه</a>
+      <a href="#">درباره من</a>
+      <a href="#">ارتباط</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>THE ADRIAN</h1>
+
+    <p>
+      به دنیای من خوش اومدی 🎮🔥
+      <br>
+      معتبر، مطمئن، سریع
+    </p>
+
+    <div class="buttons">
+      <a class="btn" href="#">مشاهده لینک‌ها</a>
+      <a class="btn" href="#">تماس با من</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 THE ADRIAN
+  </footer>
+
+</body>
+</html>

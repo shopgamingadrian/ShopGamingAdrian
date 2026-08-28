@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SHOP GAMING AD | فروشگاه تجهیزات گیمینگ</title>
+  <title>SHOP GAMING AD | فروشگاه گیمینگ</title>
 
   <style>
     * {
@@ -19,146 +19,183 @@
     }
 
     body {
-      background: #070b14;
-      color: #ffffff;
+      background: #08101f;
+      color: white;
+      line-height: 1.7;
     }
 
+    /* هدر */
     header {
-      background: #0d1424;
-      border-bottom: 1px solid #1d3c6a;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       position: sticky;
       top: 0;
       z-index: 100;
+      background: #0b1426;
+      border-bottom: 1px solid #173b68;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
     }
 
     .logo {
       color: #00aaff;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
     }
 
     nav a {
-      color: #ffffff;
+      color: white;
       text-decoration: none;
-      margin: 0 8px;
       font-size: 14px;
     }
 
-    nav a:hover {
-      color: #00aaff;
-    }
-
+    /* صفحه اصلی */
     .hero {
-      padding: 70px 7%;
+      padding: 70px 20px;
       text-align: center;
-      background: linear-gradient(135deg, #07101e, #0b1d35);
+      background:
+        radial-gradient(circle at top, #123c70 0%, #08101f 55%);
     }
 
     .hero h1 {
       color: #00aaff;
       font-size: 42px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .hero p {
-      color: #b8c2d1;
-      font-size: 17px;
+      color: #c2ccda;
+      margin-bottom: 25px;
     }
 
+    .main-btn {
+      display: inline-block;
+      background: #00aaff;
+      color: #06101c;
+      text-decoration: none;
+      padding: 13px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    /* بخش محصولات */
     .section {
-      padding: 55px 7%;
+      padding: 45px 5%;
     }
 
     .section-title {
-      color: #00aaff;
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 28px;
+      color: #00aaff;
+      font-size: 26px;
+      margin-bottom: 25px;
     }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 1100px;
+      margin: auto;
     }
 
     .product {
-      background: #0d1424;
-      border: 1px solid #1b2e4a;
-      border-radius: 16px;
-      padding: 15px;
+      background: #0e1a2d;
+      border: 1px solid #19375e;
+      border-radius: 14px;
+      padding: 12px;
       text-align: center;
-      transition: 0.2s;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-      border-color: #00aaff;
+      overflow: hidden;
     }
 
     .product-image {
       width: 100%;
-      height: 190px;
+      height: 160px;
       object-fit: contain;
-      background: #08101c;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      background: white;
+      border-radius: 10px;
+      display: block;
     }
 
     .product h3 {
-      font-size: 16px;
-      line-height: 1.8;
-      min-height: 58px;
+      font-size: 14px;
+      margin: 12px 0 8px;
+      min-height: 70px;
     }
 
-    .status {
-      color: #5cff94;
-      margin: 12px 0;
-      font-size: 14px;
+    .available {
+      color: #54e58b;
+      font-size: 13px;
+      margin-bottom: 8px;
     }
 
     .price {
       color: #00aaff;
       font-weight: bold;
-      margin-bottom: 14px;
+      font-size: 14px;
+      margin-bottom: 10px;
     }
 
-    .btn {
-      display: inline-block;
+    .buy-btn {
       width: 100%;
-      background: #00aaff;
-      color: #07101e;
       border: none;
-      padding: 12px;
-      border-radius: 10px;
+      background: #00aaff;
+      color: #06101c;
+      padding: 10px;
+      border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
-      text-decoration: none;
+    }
+
+    /* تماس */
+    .contact {
+      text-align: center;
+      background: #0e1a2d;
+      border-radius: 15px;
+      padding: 25px;
+      max-width: 700px;
+      margin: auto;
     }
 
     footer {
+      margin-top: 30px;
       text-align: center;
-      background: #0d1424;
-      color: #8795a8;
       padding: 25px;
+      background: #050a12;
+      color: #8998aa;
+      font-size: 13px;
     }
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 14px;
+    /* دسکتاپ */
+    @media (min-width: 700px) {
+      .products {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .product-image {
+        height: 190px;
+      }
+
+      .product h3 {
+        font-size: 16px;
+      }
+    }
+
+    /* موبایل خیلی کوچک */
+    @media (max-width: 380px) {
+      .products {
+        grid-template-columns: 1fr;
       }
 
       .hero h1 {
-        font-size: 32px;
-      }
-
-      nav a {
-        margin: 0 5px;
+        font-size: 34px;
       }
     }
   </style>
@@ -166,80 +203,124 @@
 
 <body>
 
-<header>
-  <div class="logo">🎮 SHOP GAMING AD</div>
+  <!-- هدر -->
+  <header>
+    <div class="logo">🎮 SHOP GAMING AD</div>
 
-  <nav>
-    <a href="#home">خانه</a>
-    <a href="#products">محصولات</a>
-    <a href="#contact">تماس</a>
-  </nav>
-</header>
+    <nav>
+      <a href="#home">خانه</a>
+      <a href="#products">محصولات</a>
+      <a href="#contact">تماس</a>
+    </nav>
+  </header>
 
-<section class="hero" id="home">
-  <h1>SHOP GAMING AD</h1>
-  <p>تجهیزات گیمینگ برای گیمرها 🎮🔥</p>
-</section>
+  <!-- صفحه اصلی -->
+  <section class="hero" id="home">
+    <h1>SHOP GAMING AD</h1>
+    <p>🎮 تجهیزات گیمینگ برای گیمرهای واقعی 🔥</p>
 
-<section class="section" id="products">
+    <a class="main-btn" href="#products">
+      مشاهده محصولات
+    </a>
+  </section>
 
-  <h2 class="section-title">🔥 محصولات موجود</h2>
+  <!-- محصولات -->
+  <section class="section" id="products">
 
-  <div class="products">
+    <h2 class="section-title">🔥 محصولات موجود</h2>
 
-    <div class="product">
-      <img class="product-image"
-           src="images/k101.jpg"
-           alt="ماوس پد گیمینگ میزاکس K101">
-      <h3>ماوس پد مخصوص بازی میزاکس مدل K101</h3>
-      <div class="status">● موجود در فروشگاه</div>
-      <div class="price">برای قیمت تماس بگیرید</div>
-      <button class="btn">افزودن به سبد خرید</button>
+    <div class="products">
+
+      <!-- محصول ۱ -->
+      <div class="product">
+        <img
+          class="product-image"
+          src="./images/k101.jpg"
+          alt="ماوس پد مخصوص بازی میزاکس مدل K101"
+        >
+
+        <h3>ماوس پد مخصوص بازی میزاکس مدل K101</h3>
+
+        <div class="available">● موجود</div>
+
+        <div class="price">استعلام قیمت</div>
+
+        <button class="buy-btn">
+          سفارش محصول
+        </button>
+      </div>
+
+      <!-- محصول ۲ -->
+      <div class="product">
+        <img
+          class="product-image"
+          src="./images/co3080g.jpg"
+          alt="کیبورد و ماوس گیمینگ یوسیتک مدل CO 3080G"
+        >
+
+        <h3>کیبورد و ماوس گیمینگ یوسیتک مدل CO 3080G</h3>
+
+        <div class="available">● موجود</div>
+
+        <div class="price">استعلام قیمت</div>
+
+        <button class="buy-btn">
+          سفارش محصول
+        </button>
+      </div>
+
+      <!-- محصول ۳ -->
+      <div class="product">
+        <img
+          class="product-image"
+          src="./images/aura-gs4.jpg"
+          alt="ماوس گیمینگ گیم دیاس مدل AURA GS4 BK"
+        >
+
+        <h3>ماوس گیم دیاس مدل AURA GS4 BK</h3>
+
+        <div class="available">● موجود</div>
+
+        <div class="price">استعلام قیمت</div>
+
+        <button class="buy-btn">
+          سفارش محصول
+        </button>
+      </div>
+
+      <!-- محصول ۴ -->
+      <div class="product">
+        <img
+          class="product-image"
+          src="./images/g06.jpg"
+          alt="هدست گیمینگ دوپریم مدل G06"
+        >
+
+        <h3>هدست گیمینگ دوپریم مدل G06</h3>
+
+        <div class="available">● موجود</div>
+
+        <div class="price">استعلام قیمت</div>
+
+        <button class="buy-btn">
+          سفارش محصول
+        </button>
+      </div>
+
     </div>
+  </section>
 
-    <div class="product">
-      <img class="product-image"
-           src="images/co3080g.jpg"
-           alt="کیبورد و ماوس گیمینگ یوسیتک CO 3080G">
-      <h3>کیبورد و ماوس گیمینگ یوسیتک مدل CO 3080G</h3>
-      <div class="status">● موجود در فروشگاه</div>
-      <div class="price">برای قیمت تماس بگیرید</div>
-      <button class="btn">افزودن به سبد خرید</button>
+  <!-- تماس -->
+  <section class="section" id="contact">
+    <div class="contact">
+      <h2>ارتباط با SHOP GAMING AD 🎮</h2>
+      <p>برای سفارش و اطلاعات بیشتر با ما در ارتباط باشید.</p>
     </div>
+  </section>
 
-    <div class="product">
-      <img class="product-image"
-           src="images/aura-gs4.jpg"
-           alt="ماوس گیمینگ گیم دیاس AURA GS4 BK">
-      <h3>ماوس گیم دیاس مدل AURA GS4 BK</h3>
-      <div class="status">● موجود در فروشگاه</div>
-      <div class="price">برای قیمت تماس بگیرید</div>
-      <button class="btn">افزودن به سبد خرید</button>
-    </div>
-
-    <div class="product">
-      <img class="product-image"
-           src="images/g06.jpg"
-           alt="هدست گیمینگ دوپریم G06">
-      <h3>هدست گیمینگ دوپریم مدل G06</h3>
-      <div class="status">● موجود در فروشگاه</div>
-      <div class="price">برای قیمت تماس بگیرید</div>
-      <button class="btn">افزودن به سبد خرید</button>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="contact">
-  <h2 class="section-title">تماس با ما</h2>
-  <p style="text-align:center; color:#b8c2d1;">
-    برای سفارش و اطلاعات بیشتر با SHOP GAMING AD در ارتباط باشید.
-  </p>
-</section>
-
-<footer>
-  © 2026 SHOP GAMING AD — تمامی حقوق محفوظ است
-</footer>
+  <footer>
+    © 2026 SHOP GAMING AD — تمامی حقوق محفوظ است
+  </footer>
 
 </body>
 </html>

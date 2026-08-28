@@ -4,19 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SHOP GAMING AD | فروشگاه گیمینگ</title>
+  <title>SHOP GAMING AD | فروشگاه تجهیزات گیمینگ</title>
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       background: #070b14;
-      color: white;
+      color: #ffffff;
     }
 
     header {
@@ -28,19 +32,20 @@
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
     }
 
     .logo {
+      color: #00aaff;
       font-size: 24px;
       font-weight: bold;
-      color: #00aaff;
     }
 
     nav a {
-      color: white;
+      color: #ffffff;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 8px;
+      font-size: 14px;
     }
 
     nav a:hover {
@@ -48,121 +53,112 @@
     }
 
     .hero {
-      min-height: 450px;
-      padding: 80px 7%;
+      padding: 70px 7%;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background:
-        linear-gradient(rgba(7,11,20,.75), rgba(7,11,20,.95));
+      background: linear-gradient(135deg, #07101e, #0b1d35);
     }
 
     .hero h1 {
-      font-size: 50px;
       color: #00aaff;
+      font-size: 42px;
       margin-bottom: 15px;
     }
 
     .hero p {
-      color: #c4c4c4;
-      font-size: 18px;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      background: #00aaff;
-      color: #06101c;
-      border: none;
-      padding: 13px 25px;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
+      color: #b8c2d1;
+      font-size: 17px;
     }
 
     .section {
-      padding: 60px 7%;
+      padding: 55px 7%;
     }
 
     .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 30px;
       color: #00aaff;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
     }
 
-    .categories,
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
 
-    .category,
     .product {
       background: #0d1424;
       border: 1px solid #1b2e4a;
-      border-radius: 14px;
-      padding: 20px;
+      border-radius: 16px;
+      padding: 15px;
       text-align: center;
+      transition: 0.2s;
     }
 
-    .category {
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    .category:hover,
     .product:hover {
       transform: translateY(-5px);
       border-color: #00aaff;
     }
 
-    .product img {
+    .product-image {
       width: 100%;
-      height: 160px;
+      height: 190px;
       object-fit: contain;
-      margin-bottom: 15px;
-      border-radius: 8px;
       background: #08101c;
+      border-radius: 12px;
+      margin-bottom: 15px;
     }
 
     .product h3 {
-      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 1.8;
+      min-height: 58px;
+    }
+
+    .status {
+      color: #5cff94;
+      margin: 12px 0;
+      font-size: 14px;
     }
 
     .price {
       color: #00aaff;
-      margin-bottom: 15px;
       font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      background: #00aaff;
+      color: #07101e;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     footer {
-      background: #0d1424;
       text-align: center;
+      background: #0d1424;
+      color: #8795a8;
       padding: 25px;
-      margin-top: 40px;
-      color: #8995a7;
     }
 
     @media (max-width: 600px) {
       header {
         flex-direction: column;
-        gap: 15px;
+        gap: 14px;
       }
 
       .hero h1 {
-        font-size: 35px;
+        font-size: 32px;
       }
 
-      nav {
-        font-size: 14px;
+      nav a {
+        margin: 0 5px;
       }
     }
   </style>
@@ -175,7 +171,6 @@
 
   <nav>
     <a href="#home">خانه</a>
-    <a href="#categories">دسته‌بندی</a>
     <a href="#products">محصولات</a>
     <a href="#contact">تماس</a>
   </nav>
@@ -183,52 +178,53 @@
 
 <section class="hero" id="home">
   <h1>SHOP GAMING AD</h1>
-  <p>دنیای تجهیزات گیمینگ 🎮🔥</p>
-  <a href="#products" class="btn">مشاهده محصولات</a>
-</section>
-
-<section class="section" id="categories">
-  <h2 class="section-title">دسته‌بندی‌ها</h2>
-
-  <div class="categories">
-    <div class="category">🖱️ موس گیمینگ</div>
-    <div class="category">⌨️ کیبورد گیمینگ</div>
-    <div class="category">🎧 هدست گیمینگ</div>
-    <div class="category">🕹️ دسته بازی</div>
-  </div>
+  <p>تجهیزات گیمینگ برای گیمرها 🎮🔥</p>
 </section>
 
 <section class="section" id="products">
-  <h2 class="section-title">🔥 محصولات ویژه</h2>
+
+  <h2 class="section-title">🔥 محصولات موجود</h2>
 
   <div class="products">
 
     <div class="product">
-      <img src="https://placehold.co/300x200/111827/00aaff?text=Gaming+Mouse" alt="موس گیمینگ">
-      <h3>موس گیمینگ</h3>
-      <div class="price">۱,۵۰۰,۰۰۰ تومان</div>
-      <button class="btn">افزودن به سبد</button>
+      <img class="product-image"
+           src="images/k101.jpg"
+           alt="ماوس پد گیمینگ میزاکس K101">
+      <h3>ماوس پد مخصوص بازی میزاکس مدل K101</h3>
+      <div class="status">● موجود در فروشگاه</div>
+      <div class="price">برای قیمت تماس بگیرید</div>
+      <button class="btn">افزودن به سبد خرید</button>
     </div>
 
     <div class="product">
-      <img src="https://placehold.co/300x200/111827/00aaff?text=Gaming+Keyboard" alt="کیبورد گیمینگ">
-      <h3>کیبورد گیمینگ</h3>
-      <div class="price">۲,۸۰۰,۰۰۰ تومان</div>
-      <button class="btn">افزودن به سبد</button>
+      <img class="product-image"
+           src="images/co3080g.jpg"
+           alt="کیبورد و ماوس گیمینگ یوسیتک CO 3080G">
+      <h3>کیبورد و ماوس گیمینگ یوسیتک مدل CO 3080G</h3>
+      <div class="status">● موجود در فروشگاه</div>
+      <div class="price">برای قیمت تماس بگیرید</div>
+      <button class="btn">افزودن به سبد خرید</button>
     </div>
 
     <div class="product">
-      <img src="https://placehold.co/300x200/111827/00aaff?text=Gaming+Headset" alt="هدست گیمینگ">
-      <h3>هدست گیمینگ</h3>
-      <div class="price">۲,۲۰۰,۰۰۰ تومان</div>
-      <button class="btn">افزودن به سبد</button>
+      <img class="product-image"
+           src="images/aura-gs4.jpg"
+           alt="ماوس گیمینگ گیم دیاس AURA GS4 BK">
+      <h3>ماوس گیم دیاس مدل AURA GS4 BK</h3>
+      <div class="status">● موجود در فروشگاه</div>
+      <div class="price">برای قیمت تماس بگیرید</div>
+      <button class="btn">افزودن به سبد خرید</button>
     </div>
 
     <div class="product">
-      <img src="https://placehold.co/300x200/111827/00aaff?text=Game+Controller" alt="دسته بازی">
-      <h3>دسته بازی</h3>
-      <div class="price">۳,۰۰۰,۰۰۰ تومان</div>
-      <button class="btn">افزودن به سبد</button>
+      <img class="product-image"
+           src="images/g06.jpg"
+           alt="هدست گیمینگ دوپریم G06">
+      <h3>هدست گیمینگ دوپریم مدل G06</h3>
+      <div class="status">● موجود در فروشگاه</div>
+      <div class="price">برای قیمت تماس بگیرید</div>
+      <button class="btn">افزودن به سبد خرید</button>
     </div>
 
   </div>
@@ -236,8 +232,8 @@
 
 <section class="section" id="contact">
   <h2 class="section-title">تماس با ما</h2>
-  <p style="text-align:center;color:#bbb;">
-    برای ارتباط و سفارش محصولات با ما در تماس باشید 🎮
+  <p style="text-align:center; color:#b8c2d1;">
+    برای سفارش و اطلاعات بیشتر با SHOP GAMING AD در ارتباط باشید.
   </p>
 </section>
 

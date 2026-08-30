@@ -1,327 +1,265 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SHOP GAMING AD | فروشگاه گیمینگ</title>
+<title>SHOP GAMING AD</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Tahoma, Arial, sans-serif;
-    }
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Tahoma,Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#08101f;color:white;line-height:1.8}
 
-    html {
-      scroll-behavior: smooth;
-    }
+header{
+  background:#0b1426;
+  padding:16px 5%;
+  border-bottom:1px solid #173b68;
+  position:sticky;top:0;z-index:10;
+  display:flex;justify-content:space-between;align-items:center
+}
 
-    body {
-      background: #08101f;
-      color: white;
-      line-height: 1.7;
-    }
+.logo{color:#00aaff;font-size:22px;font-weight:bold}
 
-    /* هدر */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #0b1426;
-      border-bottom: 1px solid #173b68;
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
+nav a{color:white;text-decoration:none;margin:0 7px;font-size:14px}
 
-    .logo {
-      color: #00aaff;
-      font-size: 22px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
+.hero{
+  text-align:center;
+  padding:70px 20px;
+  background:radial-gradient(circle at top,#123c70,#08101f 65%)
+}
 
-    nav {
-      display: flex;
-      gap: 12px;
-    }
+.hero h1{color:#00aaff;font-size:42px}
+.hero p{color:#c2ccda;margin-top:10px}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
+.section{padding:45px 5%}
+.section-title{text-align:center;color:#00aaff;margin-bottom:25px}
 
-    /* صفحه اصلی */
-    .hero {
-      padding: 70px 20px;
-      text-align: center;
-      background:
-        radial-gradient(circle at top, #123c70 0%, #08101f 55%);
-    }
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  max-width:1100px;
+  margin:auto
+}
 
-    .hero h1 {
-      color: #00aaff;
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+.product{
+  background:#0e1a2d;
+  border:1px solid #19375e;
+  border-radius:15px;
+  padding:12px;
+  text-align:center
+}
 
-    .hero p {
-      color: #c2ccda;
-      margin-bottom: 25px;
-    }
+.product-image{
+  width:100%;
+  height:160px;
+  object-fit:contain;
+  background:white;
+  border-radius:10px
+}
 
-    .main-btn {
-      display: inline-block;
-      background: #00aaff;
-      color: #06101c;
-      text-decoration: none;
-      padding: 13px 25px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
+.product h3{
+  font-size:14px;
+  margin:12px 0;
+  min-height:75px
+}
 
-    /* بخش محصولات */
-    .section {
-      padding: 45px 5%;
-    }
+.available{color:#54e58b;font-size:13px}
+.price{color:#00aaff;font-weight:bold;margin:8px 0}
 
-    .section-title {
-      text-align: center;
-      color: #00aaff;
-      font-size: 26px;
-      margin-bottom: 25px;
-    }
+.buy-btn,.telegram-btn,.back-btn{
+  border:none;
+  padding:12px;
+  border-radius:9px;
+  font-weight:bold;
+  cursor:pointer;
+  text-decoration:none;
+  display:block;
+  text-align:center;
+  width:100%
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.buy-btn,.back-btn{
+  background:#00aaff;
+  color:#06101c
+}
 
-    .product {
-      background: #0e1a2d;
-      border: 1px solid #19375e;
-      border-radius: 14px;
-      padding: 12px;
-      text-align: center;
-      overflow: hidden;
-    }
+.telegram-btn{
+  background:#168acd;
+  color:white;
+  margin-top:12px
+}
 
-    .product-image {
-      width: 100%;
-      height: 160px;
-      object-fit: contain;
-      background: white;
-      border-radius: 10px;
-      display: block;
-    }
+#orderPage{
+  display:none;
+  min-height:100vh;
+  padding:70px 20px;
+  background:radial-gradient(circle at top,#123c70,#08101f 70%)
+}
 
-    .product h3 {
-      font-size: 14px;
-      margin: 12px 0 8px;
-      min-height: 70px;
-    }
+.order-box{
+  max-width:650px;
+  margin:auto;
+  background:#0e1a2d;
+  border:1px solid #1d4d80;
+  border-radius:18px;
+  padding:30px;
+  text-align:center
+}
 
-    .available {
-      color: #54e58b;
-      font-size: 13px;
-      margin-bottom: 8px;
-    }
+.order-box h1{
+  color:#00aaff;
+  font-size:25px;
+  margin-bottom:20px
+}
 
-    .price {
-      color: #00aaff;
-      font-weight: bold;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
+.order-product{
+  background:#08101f;
+  border-radius:10px;
+  padding:12px;
+  margin:18px 0;
+  color:#00aaff
+}
 
-    .buy-btn {
-      width: 100%;
-      border: none;
-      background: #00aaff;
-      color: #06101c;
-      padding: 10px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.card-number{
+  direction:ltr;
+  font-size:21px;
+  font-weight:bold;
+  letter-spacing:1px;
+  background:#08101f;
+  padding:15px;
+  border-radius:10px;
+  margin:15px 0
+}
 
-    /* تماس */
-    .contact {
-      text-align: center;
-      background: #0e1a2d;
-      border-radius: 15px;
-      padding: 25px;
-      max-width: 700px;
-      margin: auto;
-    }
+footer{
+  text-align:center;
+  padding:25px;
+  background:#050a12;
+  color:#8998aa
+}
 
-    footer {
-      margin-top: 30px;
-      text-align: center;
-      padding: 25px;
-      background: #050a12;
-      color: #8998aa;
-      font-size: 13px;
-    }
+@media(min-width:700px){
+  .products{grid-template-columns:repeat(4,1fr);gap:20px}
+  .product-image{height:190px}
+}
 
-    /* دسکتاپ */
-    @media (min-width: 700px) {
-      .products {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-      }
-
-      .product-image {
-        height: 190px;
-      }
-
-      .product h3 {
-        font-size: 16px;
-      }
-    }
-
-    /* موبایل خیلی کوچک */
-    @media (max-width: 380px) {
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-    }
-  </style>
+@media(max-width:380px){
+  .products{grid-template-columns:1fr}
+  header{flex-direction:column}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- هدر -->
-  <header>
-    <div class="logo">🎮 SHOP GAMING AD</div>
+<div id="mainPage">
 
-    <nav>
-      <a href="#home">خانه</a>
-      <a href="#products">محصولات</a>
-      <a href="#contact">تماس</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">🎮 SHOP GAMING AD</div>
+  <nav>
+    <a href="#home">خانه</a>
+    <a href="#products">محصولات</a>
+  </nav>
+</header>
 
-  <!-- صفحه اصلی -->
-  <section class="hero" id="home">
-    <h1>SHOP GAMING AD</h1>
-    <p>🎮 تجهیزات گیمینگ برای گیمرهای واقعی 🔥</p>
+<section class="hero" id="home">
+  <h1>SHOP GAMING AD</h1>
+  <p>تجهیزات گیمینگ برای گیمرهای واقعی 🎮⚡️</p>
+</section>
 
-    <a class="main-btn" href="#products">
-      مشاهده محصولات
-    </a>
-  </section>
+<section class="section" id="products">
 
-  <!-- محصولات -->
-  <section class="section" id="products">
+<h2 class="section-title">🔥 محصولات موجود</h2>
 
-    <h2 class="section-title">🔥 محصولات موجود</h2>
+<div class="products">
 
-    <div class="products">
+<div class="product">
+  <img class="product-image" src="images/k101.jpg" alt="K101">
+  <h3>ماوس پد مخصوص بازی میزاکس مدل K101</h3>
+  <div class="available">● موجود</div>
+  <div class="price">استعلام قیمت</div>
+  <button class="buy-btn" onclick="openOrder('ماوس پد میزاکس K101')">سفارش محصول</button>
+</div>
 
-      <!-- محصول ۱ -->
-      <div class="product">
-        <img
-          class="product-image"
-          src="./images/k101.jpg"
-          alt="ماوس پد مخصوص بازی میزاکس مدل K101"
-        >
+<div class="product">
+  <img class="product-image" src="images/co3080g.jpg" alt="CO 3080G">
+  <h3>کیبورد و ماوس گیمینگ یوسیتک مدل CO 3080G</h3>
+  <div class="available">● موجود</div>
+  <div class="price">استعلام قیمت</div>
+  <button class="buy-btn" onclick="openOrder('کیبورد و ماوس یوسیتک CO 3080G')">سفارش محصول</button>
+</div>
 
-        <h3>ماوس پد مخصوص بازی میزاکس مدل K101</h3>
+<div class="product">
+  <img class="product-image" src="images/aura-gs4.jpg" alt="AURA GS4">
+  <h3>ماوس گیم دیاس مدل AURA GS4 BK</h3>
+  <div class="available">● موجود</div>
+  <div class="price">استعلام قیمت</div>
+  <button class="buy-btn" onclick="openOrder('ماوس گیم دیاس AURA GS4 BK')">سفارش محصول</button>
+</div>
 
-        <div class="available">● موجود</div>
+<div class="product">
+  <img class="product-image" src="images/g06.jpg" alt="G06">
+  <h3>هدست گیمینگ دوپریم مدل G06</h3>
+  <div class="available">● موجود</div>
+  <div class="price">استعلام قیمت</div>
+  <button class="buy-btn" onclick="openOrder('هدست گیمینگ دوپریم G06')">سفارش محصول</button>
+</div>
 
-        <div class="price">استعلام قیمت</div>
+</div>
+</section>
 
-        <button class="buy-btn">
-          سفارش محصول
-        </button>
-      </div>
+<footer>© 2026 SHOP GAMING AD</footer>
 
-      <!-- محصول ۲ -->
-      <div class="product">
-        <img
-          class="product-image"
-          src="./images/co3080g.jpg"
-          alt="کیبورد و ماوس گیمینگ یوسیتک مدل CO 3080G"
-        >
+</div>
 
-        <h3>کیبورد و ماوس گیمینگ یوسیتک مدل CO 3080G</h3>
+<div id="orderPage">
 
-        <div class="available">● موجود</div>
+<div class="order-box">
 
-        <div class="price">استعلام قیمت</div>
+<h1>ممنون که ما رو انتخاب کردی ⚡️</h1>
 
-        <button class="buy-btn">
-          سفارش محصول
-        </button>
-      </div>
+<div class="order-product" id="selectedProduct">
+محصول انتخاب‌شده
+</div>
 
-      <!-- محصول ۳ -->
-      <div class="product">
-        <img
-          class="product-image"
-          src="./images/aura-gs4.jpg"
-          alt="ماوس گیمینگ گیم دیاس مدل AURA GS4 BK"
-        >
+<p>ما متأسفانه درگاه پرداخت نداریم ⭕️</p>
 
-        <h3>ماوس گیم دیاس مدل AURA GS4 BK</h3>
+<p style="margin-top:15px">
+برای هماهنگی و ثبت سفارش، ابتدا از طریق پشتیبانی اطلاعات سفارش و قیمت نهایی را تأیید کنید.
+</p>
 
-        <div class="available">● موجود</div>
+<div class="card-number">6219861952014826</div>
 
-        <div class="price">استعلام قیمت</div>
+<p>به نام درویشی 🪪</p>
 
-        <button class="buy-btn">
-          سفارش محصول
-        </button>
-      </div>
+<a class="telegram-btn" href="https://t.me/shopgamingadrians" target="_blank">
+📱 ارتباط با پشتیبانی در تلگرام
+</a>
 
-      <!-- محصول ۴ -->
-      <div class="product">
-        <img
-          class="product-image"
-          src="./images/g06.jpg"
-          alt="هدست گیمینگ دوپریم مدل G06"
-        >
+<button class="back-btn" style="margin-top:12px" onclick="closeOrder()">
+بازگشت به محصولات
+</button>
 
-        <h3>هدست گیمینگ دوپریم مدل G06</h3>
+</div>
+</div>
 
-        <div class="available">● موجود</div>
+<script>
+function openOrder(productName) {
+  document.getElementById("mainPage").style.display = "none";
+  document.getElementById("orderPage").style.display = "block";
+  document.getElementById("selectedProduct").innerText =
+    "محصول انتخاب‌شده: " + productName;
+  window.scrollTo(0, 0);
+}
 
-        <div class="price">استعلام قیمت</div>
-
-        <button class="buy-btn">
-          سفارش محصول
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- تماس -->
-  <section class="section" id="contact">
-    <div class="contact">
-      <h2>ارتباط با SHOP GAMING AD 🎮</h2>
-      <p> برای سفارش و اطلاعات بیشتر با ما در ارتباط باشید ایدی تلگرام: https://t.me/ShopGamingAdrians
-        پیج اینستا: ad.gaming.shop.</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 SHOP GAMING AD — تمامی حقوق محفوظ است
-  </footer>
+function closeOrder() {
+  document.getElementById("orderPage").style.display = "none";
+  document.getElementById("mainPage").style.display = "block";
+  window.scrollTo(0, 0);
+}
+</script>
 
 </body>
 </html>
